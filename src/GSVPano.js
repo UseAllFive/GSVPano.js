@@ -13,6 +13,7 @@ GSVPANO.PanoLoader = function (parameters) {
 		_canvas = document.createElement('canvas'),
 		_ctx = _canvas.getContext('2d'),
 		rotation = 0,
+		pitch = 0,
 		copyright = '',
 		onSizeChange = null,
 		onPanoramaLoad = null;
@@ -102,10 +103,13 @@ GSVPANO.PanoLoader = function (parameters) {
 				if( self.onPanoramaData ) self.onPanoramaData( result );
 				var h = google.maps.geometry.spherical.computeHeading(location, result.location.latLng);
 				rotation = (result.tiles.centerHeading - h) * Math.PI / 180.0;
+				pitch = result.tiles.originPitch;
 				copyright = result.copyright;
 				self.copyright = result.copyright;
 				_panoId = result.location.pano;
 				self.location = location;
+				self.rotation = rotation;
+				self.pitch = pitch;
 				self.composePanorama();
 			} else {
 				if( self.onNoPanoramaData ) self.onNoPanoramaData( status );
