@@ -1,0 +1,12 @@
+{
+  "name": "GSVPano.js",
+  "version": "0.0.0",
+  "homepage": "https://github.com/UseAllFive/GSVPano.js",
+  "license": "MIT",
+  "ignore": [
+    "bower_components"
+  ],
+  "dependencies": {
+    "glfx.js": "git@github.com:evanw/glfx.js.git#58841c23919bd59787effc0333a4897b43835412"
+  }
+}
